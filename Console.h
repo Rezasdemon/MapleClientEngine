@@ -48,7 +48,8 @@ namespace ms
 		// TODO: fix the ambigious call to the overload function of 'print'
 		void print(const char* func, const std::exception& ex)
 		{
-			//print(func, { ex.what() }); // Blank until the ambigious call is figured out
+			//print(func, { ex.what() });
+			// Blank until the ambigious call is figured out
 		}
 
 		void print(const std::string& str)
