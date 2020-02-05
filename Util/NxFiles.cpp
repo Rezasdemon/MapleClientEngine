@@ -47,7 +47,7 @@ namespace ms
 
 		if (nl::nx::ui.resolve(POSTCHAOS_BITMAP).data_type() != nl::node::type::bitmap)
 			return Error::Code::WRONG_UI_FILE;
-
+			
 		return Error::Code::NONE;
 	}
 }

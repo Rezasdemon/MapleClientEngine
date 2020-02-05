@@ -44,6 +44,11 @@ namespace ms
 			static const std::string delim = ", ";
 			print(func + delim + msg);
 		}
+		void print(const char* func, const char* msg)
+		{
+			static const std::string delim = ", ";
+			print(func + delim + msg);
+		}
 
 		void print(const char* func, const std::exception& ex)
 		{
