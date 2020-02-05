@@ -50,6 +50,8 @@ namespace ms
 		minutes = uptime / 60;
 		hours = minutes / 60;
 
+		minutes -= hours * 60; 
+		
 		time_minutes = Charset(time["number"], Charset::Alignment::LEFT);
 		time_minutes_pos = time["posM"];
 		time_minutes_text = pad_time(minutes);
@@ -210,8 +212,13 @@ namespace ms
 
 	std::string UIQuit::pad_time(int64_t time)
 	{
+	/*
 		std::string ctime = std::to_string(time);
 		return std::string(2 - ctime.length(), '0') + ctime;
+	*/
+		char buffer[20] = { 0 };
+		snprintf(buffer, 20, "%02d", time);
+		return std::string(buffer);
 	}
 
 	float UIQuit::getexppercent(uint16_t level, int64_t exp) const
