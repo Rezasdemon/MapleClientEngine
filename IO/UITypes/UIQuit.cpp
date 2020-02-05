@@ -48,17 +48,19 @@ namespace ms
 		// Time
 		int64_t uptime = UI::get().get_uptime() / 1000 / 1000;
 		minutes = uptime / 60;
-		hours = minutes / 60;
+		hours = (minutes / 60 );
 
+		//sanity check form factor etc
 		minutes -= hours * 60; 
-		
+		int64_t xxhours = hours > 99 ? 99 : hours;
+
 		time_minutes = Charset(time["number"], Charset::Alignment::LEFT);
 		time_minutes_pos = time["posM"];
 		time_minutes_text = pad_time(minutes);
 
 		time_hours = Charset(time["number"], Charset::Alignment::LEFT);
 		time_hours_pos = time["posH"];
-		time_hours_text = pad_time(hours);
+		time_hours_text = pad_time(xxhours);
 
 		time_number_width = time["numberWidth"];
 
